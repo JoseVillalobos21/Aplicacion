@@ -21,6 +21,19 @@ CREATE VIEW TV_NombreAutor AS
 SELECT NombreAutor
 FROM AUTORES;
 
+-- Crear función para obtener el nombre del autor por su código
+CREATE OR REPLACE FUNCTION obtener_nombre_autor(codigo VARCHAR)
+RETURNS VARCHAR AS $$
+DECLARE
+	nombre VARCHAR(30);
+BEGIN
+	SELECT NombreAutor INTO nombre
+	FROM AUTORES
+	WHERE CodigoAutor = codigo;
+	RETURN nombre;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
