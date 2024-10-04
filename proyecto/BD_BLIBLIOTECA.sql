@@ -6,9 +6,11 @@ CREATE TABLE AUTORES(
 );
 
 
-INSERT INTO AUTORES (CodigoAutor,NombreAutor)
-VALUES ('1000','Luis Joyanes Aguilar'),
-('2000', 'William A. Granville');
+-- Insertar autores en la tabla AUTORES
+INSERT INTO AUTORES (CodigoAutor, NombreAutor)
+VALUES 
+	('1000', 'Luis Joyanes Aguilar'), -- Añadido espacio después de la coma para mejor legibilidad
+	('2000', 'William A. Granville');
 
 SELECT * FROM AUTORES;
 
