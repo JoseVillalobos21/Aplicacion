@@ -1,7 +1,8 @@
 CREATE TABLE AUTORES(
-CodigoAutor VARCHAR(10),
-NombreAutor VARCHAR(30),
-PRIMARY KEY (CodigoAutor)
+	--Comit 1
+	CodigoAutor VARCHAR(10) NOT NULL, -- Añadido NOT NULL para asegurar que CodigoAutor no sea nulo
+	NombreAutor VARCHAR(30) NOT NULL, -- Añadido NOT NULL para asegurar que NombreAutor no sea nulo
+	PRIMARY KEY (CodigoAutor)
 );
 
 
