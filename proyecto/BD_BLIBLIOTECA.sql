@@ -6,12 +6,17 @@ CREATE TABLE AUTORES(
 );
 
 
+-- Crear vista TV_AUTORES para seleccionar todos los registros de AUTORES
+CREATE VIEW TV_AUTORES AS
+SELECT * FROM AUTORES;
+
 -- Insertar autores en la tabla AUTORES
 INSERT INTO AUTORES (CodigoAutor, NombreAutor)
 VALUES 
 	('1000', 'Luis Joyanes Aguilar'), -- Añadido espacio después de la coma para mejor legibilidad
 	('2000', 'William A. Granville');
 
+-- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
 CREATE VIEW TV_AUTORES AS
