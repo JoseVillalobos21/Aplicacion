@@ -16,6 +16,11 @@ VALUES
 	('1000', 'Luis Joyanes Aguilar'), -- Añadido espacio después de la coma para mejor legibilidad
 	('2000', 'William A. Granville');
 
+-- Crear vista TV_NombreAutor para seleccionar solo el nombre del autor de AUTORES
+CREATE VIEW TV_NombreAutor AS
+SELECT NombreAutor
+FROM AUTORES;
+
 -- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
