@@ -56,6 +56,15 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Crear función para eliminar un autor por su código
+CREATE OR REPLACE FUNCTION eliminar_autor(codigo VARCHAR)
+RETURNS VOID AS $$
+BEGIN
+	DELETE FROM AUTORES
+	WHERE CodigoAutor = codigo;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
