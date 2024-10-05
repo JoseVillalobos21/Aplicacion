@@ -52,6 +52,7 @@ RETURNS INTEGER AS $$
 DECLARE
 	total INTEGER;
 BEGIN
+	-- Contar el número total de libros en la tabla LIBROS
 	SELECT COUNT(*) INTO total
 	FROM LIBROS;
 	RETURN total;
@@ -62,6 +63,7 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION actualizar_nombre_autor(codigo VARCHAR, nuevo_nombre VARCHAR)
 RETURNS VOID AS $$
 BEGIN
+	-- Actualizar el nombre del autor en la tabla AUTORES
 	UPDATE AUTORES
 	SET NombreAutor = nuevo_nombre
 	WHERE CodigoAutor = codigo;
@@ -72,11 +74,11 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION actualizar_titulo_libro(codigo VARCHAR, nuevo_titulo VARCHAR)
 RETURNS VOID AS $$
 BEGIN
+	-- Actualizar el título del libro en la tabla LIBROS
 	UPDATE LIBROS
 	SET Titulo = nuevo_titulo
 	WHERE CodigoLibro = codigo;
 END;
-$$ LANGUAGE plpgsql;
 
 -- Crear función para eliminar un autor por su código
 CREATE OR REPLACE FUNCTION eliminar_autor(codigo VARCHAR)
