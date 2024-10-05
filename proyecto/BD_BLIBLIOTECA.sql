@@ -46,6 +46,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Crear función para contar el número de libros
+CREATE OR REPLACE FUNCTION contar_libros()
+RETURNS INTEGER AS $$
+DECLARE
+	total INTEGER;
+BEGIN
+	SELECT COUNT(*) INTO total
+	FROM LIBROS;
+	RETURN total;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Crear función para actualizar el nombre del autor
 CREATE OR REPLACE FUNCTION actualizar_nombre_autor(codigo VARCHAR, nuevo_nombre VARCHAR)
 RETURNS VOID AS $$
