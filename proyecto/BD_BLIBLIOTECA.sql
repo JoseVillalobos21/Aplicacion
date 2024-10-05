@@ -34,6 +34,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Crear función para contar el número de autores
+CREATE OR REPLACE FUNCTION contar_autores()
+RETURNS INTEGER AS $$
+DECLARE
+	total INTEGER;
+BEGIN
+	SELECT COUNT(*) INTO total
+	FROM AUTORES;
+	RETURN total;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
