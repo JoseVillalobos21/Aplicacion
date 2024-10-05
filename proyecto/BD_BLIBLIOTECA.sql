@@ -68,6 +68,16 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Crear función para actualizar el título de un libro
+CREATE OR REPLACE FUNCTION actualizar_titulo_libro(codigo VARCHAR, nuevo_titulo VARCHAR)
+RETURNS VOID AS $$
+BEGIN
+	UPDATE LIBROS
+	SET Titulo = nuevo_titulo
+	WHERE CodigoLibro = codigo;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Crear función para eliminar un autor por su código
 CREATE OR REPLACE FUNCTION eliminar_autor(codigo VARCHAR)
 RETURNS VOID AS $$
