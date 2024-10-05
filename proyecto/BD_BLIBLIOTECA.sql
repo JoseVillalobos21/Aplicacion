@@ -46,6 +46,16 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Crear función para actualizar el nombre del autor
+CREATE OR REPLACE FUNCTION actualizar_nombre_autor(codigo VARCHAR, nuevo_nombre VARCHAR)
+RETURNS VOID AS $$
+BEGIN
+	UPDATE AUTORES
+	SET NombreAutor = nuevo_nombre
+	WHERE CodigoAutor = codigo;
+END;
+$$ LANGUAGE plpgsql;
+
 -- Seleccionar todos los registros de la tabla AUTORES
 SELECT * FROM AUTORES;
 
